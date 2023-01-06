@@ -24,7 +24,7 @@ interface IPropTypes {
 }
 
 const Home: NextPage<IPropTypes> = ({ categories, mobiles }) => {
-  console.log('categories', categories)
+ 
   return (
     <div>
 
@@ -72,7 +72,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const { data: categories, }: AxiosResponse<ICollectionResponse<ICategory[]>> =
     await fetchCategories(queryString);
 
-  console.log(categories);
+ 
   return {
     props: {
       categories: {

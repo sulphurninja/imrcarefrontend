@@ -42,12 +42,15 @@ const Tabs = ({categories}: IPropTypes) => {
           ? 'border-green-300 text-green-300'
           : 'border-black text-white font-bold'
         }` }>
+                 <Link href={`/category/${category.attributes.Slug}`}>
            <Image src={`https://sea-turtle-app-hewtp.ondigitalocean.app${category.attributes.Image.data.attributes.url}`} width={900} height={100} alt='#' className='border-white object-contain  rounded-full border-2  h-[50px] w-[50px] lg:w-[120px] lg:h-[120px]'/>
-          <Link href={`/category/${category.attributes.Slug}`}>
+           </Link>
+           <Link href={`/category/${category.attributes.Slug}`}>
             {
               category.attributes.Title
             }
-          </Link>
+      </Link>
+        
          </li>
         )
       })}
