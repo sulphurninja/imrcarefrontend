@@ -31,7 +31,7 @@ const slug=({mobile, notFound=false}:IPropType)=> {
         <div className="max-w-screen-xl flex items-center mx-auto">
           <div className="flex md:flex-row flex-col md:justify-between w-full md:gap-4 gap-8">
             <div className="mx-auto">
-            <Image src={`http://localhost:1337${mobile.attributes.Image.data.attributes.url}`} alt='#' width={200} height={200} className='   h-[200px] w-[200px] lg:w-[300px] lg:h-[300px]'/>
+            <Image src={`https://sea-turtle-app-hewtp.ondigitalocean.app${mobile.attributes.Image.data.attributes.url}`} alt='#' width={200} height={200} className='   h-[200px] w-[200px] lg:w-[300px] lg:h-[300px]'/>
             </div>
 
             <div className="flex-grow xl:max-w-2xl mt-[-100px] ml-auto mr-auto text-center lg:max-w-xl  md:max-w-md">

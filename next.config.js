@@ -3,7 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   images:{
     domains: ['res.cloudinary.com',
-    'localhost']
+    'localhost',
+    'sea-turtle-app-hewtp.ondigitalocean.app']
   },
 }
 
