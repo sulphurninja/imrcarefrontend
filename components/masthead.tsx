@@ -10,10 +10,7 @@ const Masthead: React.FC = () => {
     <div
     
       className='text-white min-h-screen flex flex-col items-center justify-center sticky top-0 -z-10'>
-        <video autoPlay loop muted playsInline className='absolute w-full h-full object-cover'>
-       
-            <source src="https://res.cloudinary.com/kaam-24x7/video/upload/v1672684636/production_ID_3692630_qgmvwx.mp4" type="video/webm; codecs=vp9" />
-        </video>
+        <img src='/bg.gif' className='absolute w-full h-full object-cover' />
         <div className='pt-10 absolute mt-[350px] ml-auto mr-auto'>
             <Image src="/logo.png" alt="imr care logo" width={300} height={300}
             />

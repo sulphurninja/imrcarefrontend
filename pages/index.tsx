@@ -1,30 +1,25 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import { Inter } from '@next/font/google';
 import Masthead from '../components/masthead';
 import Aboutus from '../components/aboutus';
 import Skills from '../components/skills';
+import OrderForm from '../components/orderform'
 import { GetServerSideProps, NextPage } from 'next';
-import { fetchCategories, fetchMobiles } from '../http';
-import { ICategory, ICollectionResponse, IMobile } from '../types';
-import { AxiosResponse } from 'axios';
-import Tabs from '../components/Tabs';
-import MobileList from '../components/MobileList';
-import qs from 'qs'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
-interface IPropTypes {
-  categories: {
-    items: ICategory[];
-  };
-  mobiles:{
-    items: IMobile[];
-  }
-}
+// interface IPropTypes {
+//   categories: {
+//     items: ICategory[];
+//   };
+//   mobiles:{
+//     items: IMobile[];
+//   }
+// }
 
-const Home: NextPage<IPropTypes> = ({ categories, mobiles }) => {
- 
+const Home: NextPage = () => {
+
   return (
     <div>
 
@@ -39,11 +34,11 @@ const Home: NextPage<IPropTypes> = ({ categories, mobiles }) => {
       <Masthead />
       <Aboutus />
       <Skills />
-      <section id='mobiles' className='bg-black h-max-fit w-max-fit'>
-        <Tabs categories={categories.items} />
-
+      <section id='mobiles' className='bg-black '>
+        {/* <Tabs categories={categories.items} /> */}
+        <OrderForm />
         {/**Mobiles */}
-        <MobileList mobiles={mobiles.items} />
+        {/* <MobileList mobiles={mobiles.items} /> */}
 
       </section>
 
@@ -54,36 +49,4 @@ const Home: NextPage<IPropTypes> = ({ categories, mobiles }) => {
 };
 
 export default Home;
-
-export const getServerSideProps: GetServerSideProps = async () => {
-
-  const options = {
-    populate: ['Image'],
-  };
-
-  const queryString = qs.stringify(options);
-
-  // Mobiles
-  const { data: mobiles, }: AxiosResponse<ICollectionResponse<IMobile[]>> =
-    await fetchMobiles(queryString);
-
-
-  //categories
-  const { data: categories, }: AxiosResponse<ICollectionResponse<ICategory[]>> =
-    await fetchCategories(queryString);
-
- 
-  return {
-    props: {
-      categories: {
-        items: categories.data
-      },
-      mobiles :{
-        items: mobiles.data,
-        pagination: mobiles.meta.pagination,
-      }
-    }
-  }
-}
-
 
