@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-mongoose.deleteModel('Service')
+// mongoose.deleteModel('Service')
 
 const serviceSchema = new mongoose.Schema({
   serviceName: {

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 // Delete the existing 'Brand' model from the cache
-mongoose.deleteModel('Company')
+// mongoose.deleteModel('Company')
 
 const companySchema = new mongoose.Schema({
   title: {
