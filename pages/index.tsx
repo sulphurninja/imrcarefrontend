@@ -4,6 +4,7 @@ import Masthead from '../components/masthead';
 import Aboutus from '../components/aboutus';
 import Skills from '../components/skills';
 import OrderForm from '../components/orderform'
+import Footer from '../components/Footer'
 import { GetServerSideProps, NextPage } from 'next';
 
 
@@ -42,7 +43,7 @@ const Home: NextPage = () => {
 
       </section>
 
-
+<Footer/>
 
     </div>
   )
